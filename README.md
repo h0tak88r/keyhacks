@@ -98,6 +98,7 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Zendesk Access token](#Zendesk-Access-Token)
 - [Zendesk API key](#Zendesk-api-key)
+- [OpenAI API key](#OpenAI-api-key)
 
 
 # Detailed Information
@@ -944,6 +945,26 @@ Basic:
 ```
 curl -u username:password http://your-grafana-server-url.com/api/user
 ```
+## [OpenAI Api Key](https://platform.openai.com/docs/quickstart?language-preference=curl#create-and-export-an-api-key)
+```
+curl "https://api.openai.com/v1/chat/completions" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $OPENAI_API_KEY" \
+    -d '{
+        "model": "gpt-4o-mini",
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a helpful assistant."
+            },
+            {
+                "role": "user",
+                "content": "Write a haiku that explains the concept of recursion."
+            }
+        ]
+    }'
+```
+
 
 # Contributing
 
